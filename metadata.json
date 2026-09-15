@@ -1,0 +1,10 @@
+{
+  "name": "Grafik Keimanan Harian",
+  "description": "Aplikasi pencatatan ibadah harian dengan visualisasi grafik keimanan interaktif, arah kiblat kompas digital presisi, multi-akun keluarga, waktu sholat resmi Kemenag RI, fitur pencarian masjid/mushola terdekat Google Maps, dan integrasi Google Calendar.",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

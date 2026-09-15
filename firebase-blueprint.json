@@ -1,0 +1,74 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile for multi-account Islamic worship tracking",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "User display name"
+        },
+        "email": {
+          "type": "string",
+          "description": "User Google email address"
+        },
+        "photoURL": {
+          "type": "string",
+          "description": "User avatar image URL"
+        },
+        "roleTag": {
+          "type": "string",
+          "description": "User profile role tag such as Utama, Ayah, Ibu, Anak"
+        },
+        "avatarColor": {
+          "type": "string",
+          "description": "Theme color code for local or account avatar"
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "ISO timestamp when account was created"
+        },
+        "lastActive": {
+          "type": "string",
+          "description": "ISO timestamp when account was last active"
+        }
+      },
+      "required": ["name", "createdAt", "lastActive"]
+    },
+    "DailyRecord": {
+      "title": "DailyRecord",
+      "description": "Daily Islamic worship tracking record and faith scoring",
+      "type": "object",
+      "properties": {
+        "date": {
+          "type": "string",
+          "description": "Calendar date formatted as YYYY-MM-DD"
+        },
+        "faithScore": {
+          "type": "number",
+          "description": "Calculated faith score percentage (0-100)"
+        },
+        "notes": {
+          "type": "string",
+          "description": "Personal evaluation notes or reflections"
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "ISO timestamp when record was last updated"
+        }
+      },
+      "required": ["date", "faithScore", "updatedAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "Private user account profile document"
+    },
+    "/users/{userId}/records/{date}": {
+      "schema": "DailyRecord",
+      "description": "Daily worship records scoped to specific user account"
+    }
+  }
+}
